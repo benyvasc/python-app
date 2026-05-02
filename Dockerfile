@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copia o arquivo de código fonte para dentro do contêiner
-COPY app.py .
+COPY ./src/app.py .
 
 # Instala a dependência necessária (Flask)
 RUN pip install --no-cache-dir flask
