@@ -39,8 +39,4 @@ http://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
 helm repo add argo https://argoproj.github.io/argo-helm .
 helm repo update
 helm upgrade --install argocd argo/argo-cd --namespace argocd --create-namespace -f values-argo.yaml
-
-admin
-iJeRyswywFWMIuwL
-VK568kpjXWZpCD0g
 ```
