@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: caretta-grafana
+  namespace: caretta
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grafana.teste.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: caretta-grafana
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.49.2
