@@ -1,13 +1,13 @@
 name: ci
 on:
   push:
-    paths:
-      - src/**
+    # paths:
+    #   - src/**
     branches:
       - master
 jobs:
   login:
-    runs-on:  self-hosted
+    runs-on: self-hosted
     steps:
       - name: Definindo SHA 6 Dig
         shell: bash
