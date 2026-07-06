@@ -1,7 +1,10 @@
 name: ci
 on:
   push:
-    branches: master
+    paths:
+      - src/**
+    branches:
+      - master
 jobs:
   login:
     runs-on: ubuntu-latest
