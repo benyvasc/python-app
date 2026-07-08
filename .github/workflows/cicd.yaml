@@ -26,14 +26,6 @@ jobs:
         with:
           push: true
           tags: benyvasc/python-app:${{ env.COMMIT_ID }}
-      -
-        name: Limpeza de Tags do DockerHUB
-        uses: joshbeard/hub-tag-delete@v1
-        with:
-          dockerhub_username: ${{ vars.DOCKERHUB_USERNAME }}
-          dockerhub_password: ${{ secrets.DOCKERHUB_TOKEN  }}
-          dockerhub_repository: benyvasc/python-app
-          retain_count: 2
 
   cd:
     needs: ci
