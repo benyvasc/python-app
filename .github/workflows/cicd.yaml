@@ -41,10 +41,8 @@ jobs:
         shell: bash
         run: |
           echo ${{ needs.ci.outputs.commit_id }}
-          # python3 -m pip install --upgrade pip
-          sudo apt update
-          sudo apt install python3-pip -y
-          pip3 install yq
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
           yq -Yi '.image.tag = "${{ needs.ci.outputs.commit_id }}" charts/python-app/values.yaml'
       -
         name: Atualizando Imagem TAG
