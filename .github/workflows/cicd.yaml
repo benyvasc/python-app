@@ -44,7 +44,7 @@ jobs:
           curl -sSL -o yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
           chmod +x yq
           sudo mv ./yq /usr/local/bin/yq
-          yq -Yi '.image.tag = "${{ needs.ci.outputs.commit_id }}" charts/python-app/values.yaml'
+          yq -i '.image.tag = "${{ needs.ci.outputs.commit_id }}" charts/python-app/values.yaml'
       -
         name: Atualizando Imagem TAG
         uses: EndBug/add-and-commit@v10 # You can change this to use a specific version.
