@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-app
+  description: App-teste monstra informações (Data, hora, IP)
+  annotations:
+    github.com/project-slug: benyvasc/python-app
+  #   backstage.io/techdocs-ref: dir:.
+spec:
+  # https://backstage.io/docs/features/software-catalog/descriptor-format#spectype-required
+  type: service
+  owner: development
+  lifecycle: experimental
