@@ -5,7 +5,7 @@ metadata:
   description: App-teste monstra informações (Data, hora, IP)
   annotations:
     github.com/project-slug: benyvasc/python-app
-  #   backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:.
 spec:
   # https://backstage.io/docs/features/software-catalog/descriptor-format#spectype-required
   type: service
