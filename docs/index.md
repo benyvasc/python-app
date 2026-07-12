@@ -1,4 +1,3 @@
-# Test TechDocs on Backstage
 ## 1. Obtendo código fonte:
 - https://backstage.io/docs/getting-started/#prerequisites
 - Necessário: Node (v22 ou v24), NVM, Yarn
@@ -41,11 +40,33 @@ backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
 - https://github.com/backstage/backstage/tree/master/packages/catalog-model/examples/acme
 
 ## 3. Funcionalidades
-Backstage  trabalha sobre 3 pilares
-- Software Catalog
-  - https://backstage.io/docs/features/software-catalog/descriptor-format/
-  - https://backstage.io/docs/features/software-catalog/descriptor-format/#kind-component
-- TechDocs
-    - Usa mkdocs
-    - https://github.com/backstage/backstage/blob/master/mkdocs.yml
-- Software templates
+Backstage trabalha sobre 3 pilares:
+
+### Software Catalog
+Controle dos projetos existente.
+- https://backstage.io/docs/features/software-catalog/descriptor-format/
+- https://backstage.io/docs/features/software-catalog/descriptor-format/#kind-component
+
+### TechDocs
+
+Para gerenciar a documentação detalhada dos projetos.
+
+- No `catalog-info.yaml` existem parâmetros para indicar a pasta onde os arquivos estão e o tipo de documentação: ` backstage.io/techdocs-ref: dir:.`. O techdocs usa o mkdcs
+- Assim podemos criar o arquivos `mkdocs.yaml` e a pasta docs com todos os demais arquivos da documentação.
+- Para gerar a documentação utilizando usnado o techdocs é ndessário.
+
+Ajustar o app-config.local.yaml e adicionar:
+
+```
+techdocs:
+  generator:
+    runIn: 'local'
+```
+e instalar o plugin do mkdocs-techdocs-core com:
+```
+apt update && \
+apt install -y python3 python3-pip && \
+pip3 install mkdocs-techdocs-core --break-system-packages
+
+```
+### Software templates
