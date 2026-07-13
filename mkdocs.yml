@@ -11,5 +11,4 @@ plugins:
 
 # For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
 nav:
-  - Overview:
-      - What is Python APP ?: './docs/index.md'
+  - Home: 'index.md'
